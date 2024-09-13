@@ -4,8 +4,9 @@
     </div>
     <div class="my-container" id="about">
             <!-- ----------😎 about me 😎----------  -->
-            <div class="about-me ptop">
-                <div  class="my-card">
+            <div class="about-me ptop inner-container pt-5">
+                <!-- <h3 class="text-center mat-headline-large fw-500 pt-4">Hello, Welcome to my portfolio</h3> -->
+                <div class="my-card">
                     <div class="aboutme">
                         <div><img src="assets/me.jpg" alt="Your Photo" class="profile-photo" style="object-fit: cover;"></div>
                         <div class="aboutme-text">
@@ -16,12 +17,12 @@
                 </div>
             </div>
             <!-- ----------😎 experience list 😎----------  -->
-            <div class="experience-list ptop" id="experiences">
+            <div class="experience-list inner-container ptop" id="experiences">
                 <h3 class="text-center mat-headline-large fw-500">Work Experiences</h3>
                 <app-experiences-list></app-experiences-list>
             </div>
             <!-- ---------- project list ----------  -->
-            <div class="project-list ptop" id="projects">
+            <div class="project-list ptop inner-container inner-white-container" id="projects">
                 <div class="text-center mat-headline-large">My Projects</div>
                 <div class="grid-container">
                     <div class="my-card-no-shadow" *ngFor="let project of projects">

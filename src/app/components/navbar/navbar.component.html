@@ -2,7 +2,11 @@
   <nav class="navbar">
     <div class="navbar-header">
       <a href="#" class="navbar-brand mat-title-large">My Portfolio</a>
-      <button class="navbar-toggle" (click)="toggleMenu()">☰</button>
+      <div class="navbar-toggle" (click)="toggleMenu()">
+        <div class="menu-icon">
+          <mat-icon aria-hidden="false" aria-label="menu icon"  fontIcon="menu">menu</mat-icon>
+        </div>
+      </div>
     </div>
     <ul class="navbar-menu" [class.active]="isMenuOpen">
       <li><a href="#about">About</a></li>
