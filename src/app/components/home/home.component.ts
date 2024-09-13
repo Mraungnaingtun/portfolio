@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { ExperiencesListComponent } from '../experiences-list/experiences-list.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 interface Project {
   title: string;
   description: string;
@@ -11,60 +11,66 @@ interface Project {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ CommonModule,ExperiencesListComponent],
+  imports: [CommonModule, ExperiencesListComponent, NavbarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 
-  iam = "I'm Stephen Chow";
+  iam = "I'm Aung Naing Tun";
 
-  aboutme = `    I'm a Full Stack Web Developer 😎 with expertise in frontend technologies like Angular.js
+  aboutme = `I'm a Full Stack Web Developer 😎 with expertise in frontend technologies like Angular.js
              and React.js, as well as backend development using Java Spring Boot. With experience 
-             in building and optimizing RESTful APIs and banking applications, he excels in 
-             database management and performance optimization. Aung holds a Bachelor's degree
-              in Computer Science and has participated in the ICPC (2017, 2018). Currently,
-               he is expanding his skill set at MIT, working with Docker, MySQL, MS SQL, and
-                PostgreSQL.`;
+             in building and optimizing RESTful APIs and banking applications, holds a Bachelor's degree
+              in Computer Science and has participated in the ICPC (2017, 2018).`;
 
   projects: Project[] = [
     {
-      title: 'Project Title 1',
-      description: 'Short description of Project 1.',
+      title: 'E-commerce Platform',
+      description: 'A brief overview of an online store platform, including its purpose and key features.',
       link: 'https://link-to-project1.com',
-      languages: ['JavaScript', 'Angular']
+      languages: ['Java', 'Angular']
     },
     {
-      title: 'Project Title 2',
-      description: 'Short description of Project 2.',
+      title: 'Project Management Tool',
+      description: 'A short summary of a tool designed for managing team projects and tasks efficiently.',
       link: 'https://link-to-project2.com',
-      languages: ['JavaScript', 'Angular']
+      languages: ['Java', 'Angular']
     },
     {
-      title: 'Project Title 3',
-      description: 'Short description of Project 3.',
+      title: 'Social Media Dashboard',
+      description: 'A concise description of a dashboard for monitoring social media metrics and activity.',
       link: 'https://link-to-project3.com',
-      languages: ['JavaScript', 'Angular']
+      languages: ['JavaScript', 'React']
     },
     {
-      title: 'Project Title 4',
-      description: 'Short description of Project 4.',
+      title: 'Portfolio Website',
+      description: 'A quick introduction to a personal portfolio website showcasing projects and skills.',
       link: 'https://link-to-project4.com',
-      languages: ['JavaScript', 'Angular']
+      languages: ['HTML', 'Angular']
     },
     {
-      title: 'Project Title 4',
-      description: 'Short description of Project 4.',
-      link: 'https://link-to-project4.com',
-      languages: ['JavaScript', 'Angular']
+      title: 'Real-Time Chat App',
+      description: 'An overview of a real-time chat application with features like messaging and notifications.',
+      link: 'https://link-to-project5.com',
+      languages: ['JavaScript', 'React']
     },
     {
-      title: 'Project Title 4',
-      description: 'Short description of Project 4.',
-      link: 'https://link-to-project4.com',
-      languages: ['JavaScript', 'Angular']
+      title: 'Employee Management System',
+      description: 'A brief outline of a system for managing employee data, performance, and payroll.',
+      link: 'https://link-to-project6.com',
+      languages: ['Spring Boot', 'React']
     },
   ];
+
+
+
+  getColors(language: string) {
+    if (language) {
+      return language.toLowerCase().replace(/\s+/g, '-');
+    }
+    return '';
+  }
 
 
 }

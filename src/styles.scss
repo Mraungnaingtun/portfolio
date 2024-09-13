@@ -9,6 +9,20 @@ body {
     background-color: #fcfbfe;
 }
 
+
+.fw-500 {
+    font-weight: 500;
+ }
+
+ .t-justfiy{
+    text-align: justify;
+ }
+
+ .seperate-above-section{
+    padding-top: 1rem;
+ }
+
+  
 .my-shadow {
     box-shadow: 0px 7px 30px 0px rgba(113, 122, 131, 0.11) !important;
 }
@@ -24,6 +38,10 @@ body {
     padding-bottom: 20px;
 }
 
+.experience-list {
+    margin: 1rem 0;
+}
+
 
 .my-container {
     padding-left: 10%;
@@ -33,6 +51,8 @@ body {
 p {
     line-height: 1.6;
     text-align: justify;
+    text-indent: 48px;
+    letter-spacing: 1.5px;
 }
 
 .header-list ul {
@@ -93,11 +113,11 @@ h2 {
 
 .aboutme {
     display: flex;
-
+    align-items: center;
 }
 
 .logan-text {
-    font-size: 2.1rem;
+    // font-size: 2.1rem;
     font-weight: 900;
     background: linear-gradient(45deg, #11cde6, #e70892, #220ce0);
     color: transparent;
@@ -146,13 +166,13 @@ h2 {
 
 /* Title inside the grid item */
 .grid-item h2 {
-    font-size: 1.5em;
+    // font-size: 1.5em;
     margin: 10px 0;
 }
 
 /* Description inside the grid item */
 .grid-item p {
-    font-size: 0.9em;
+    // font-size: 0.9em;
     color: #555;
 }
 
@@ -186,7 +206,7 @@ h2 {
 .language-list li {
     padding: 3px 0;
     /* Space between items */
-    font-size: 0.9em;
+    // font-size: 0.9em;
     /* Slightly smaller font */
 }
 
@@ -201,14 +221,64 @@ h2 {
     border-radius: 5px;
     padding: 5px 10px;
     margin-right: 5px;
-    font-size: 0.9em;
+    // font-size: 0.9em;
+}
+
+.html {
+    background-color: #e34c26;
+}
+
+.css {
+    background-color: #264de4;
+}
+
+.javascript {
+    background-color: #f0db4f;
+    color: black;
+}
+
+.flutter {
+    background-color: #02569b;
+}
+
+.react {
+    background-color: #61dafb;
+    color: black;
+}
+
+.angular {
+    background-color: #dd0031;
+}
+
+.spring-boot {
+    background-color: #6db33f;
+}
+
+.typescript {
+    background-color: #3178c6;
+}
+
+.python {
+    background-color: #306998;
+}
+
+.java {
+    background-color: #f89820;
 }
 
 
-///======media======================
+///========================================media======================
 
 
 /* Mobile Responsiveness */
+
+@media screen and (max-width: 768px) {
+    .aboutme {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 @media (max-width: 576px) {
     ul {
         flex-direction: column;
@@ -237,3 +307,5 @@ h2 {
         padding-right: 1rem;
     }
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

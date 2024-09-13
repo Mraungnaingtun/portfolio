@@ -12,35 +12,17 @@ export class ExperiencesListComponent {
 
   experiences = [
     {
-      jobTitle: "Backend Development - Java",
+      jobTitle: "Full Stack Web Developer - MIT",
+      fromdate: "October 2022",
+      todate: "Present",
       responsibilities: [
-        "Designed and developed RESTful APIs to support various functionalities of a banking application, ensuring reliability and efficiency.",
-        "Implemented database schema and optimized SQL queries to enhance system performance and reduce response times.",
-        "Documented technical specifications, API endpoints, and deployment procedures to facilitate knowledge sharing and onboarding of new team members.",
-        "Worked closely with product managers and stakeholders to translate business requirements into technical specifications.",
+        "Designing and developing RESTful APIs for banking applications while optimizing database schemas and queries for better performance.",
+        "My role also involved documenting technical specifications and collaborating with stakeholders to meet business needs.",
+        "As a Frontend Developer using Angular, I built dynamic web applications, ensured smooth API integration, and improved performance..",
+        "I have also managed databases, proficient in designing and optimizing systems across MSSQL and PostgreSQL.",
         "Developed robust backend core API services for external clients, incorporating rigorous load testing to ensure optimal performance."
       ],
-      technologies: ["MSSQL", "Postgres"]
+      technologies: ['Java', 'Angular', "Ms SQL", "Postgres"]
     },
-    {
-      jobTitle: "Front End Development - Angular",
-      responsibilities: [
-        "Developed dynamic and responsive web applications using Angular framework.",
-        "Worked with Angular Material to create a user-friendly interface with consistent design.",
-        "Collaborated with backend teams to integrate RESTful APIs with the frontend.",
-        "Optimized frontend performance for faster load times and smoother user interactions.",
-        "Maintained high-quality code by using best practices such as code reviews and testing."
-      ],
-      technologies: ["Angular", "TypeScript", "HTML", "CSS"]
-    },
-    {
-      jobTitle: "Database Management-Mssql/Postgres",
-      responsibilities: [
-        "Proficient in designing, implementing, and optimizing database systems across multiple platforms including MSSQL and PostgreSQL.",
-        "Developed complex SQL queries, stored procedures, and triggers to support business logic and application functionalities.",
-        "Optimized database performance by creating indexes, analyzing query execution plans, and tuning server configurations."
-      ],
-      technologies: ["MSSQL", "Postgres"]
-    }
   ];
 }

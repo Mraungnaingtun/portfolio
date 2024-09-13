@@ -1,15 +1,18 @@
 <div class="ex-container">
   <div class="experience-card my-shadow" *ngFor="let experience of experiences">
-    <h2 class="job-title">{{ experience.jobTitle }}</h2>
+    <div class="job-title mat-title-large">
+      {{ experience.jobTitle }}
+      <span class="mat-body-medium">({{ experience.fromdate }} to {{experience.todate}})</span>
+    </div>
     <div class="section">
-      <h3>Responsibilities</h3>
+      <div class="mat-headline-small fw-500">Responsibilities</div>
       <ul class="responsibilities">
-        <li *ngFor="let responsibility of experience.responsibilities">{{ responsibility }}</li>
+        <li *ngFor="let responsibility of experience.responsibilities" class="mat-body-large">{{ responsibility }}</li>
       </ul>
     </div>
     <div class="section">
-      <h3>Technologies</h3>
-      <p>{{ experience.technologies.join(', ') }}</p>
+      <div class="mat-headline-small fw-500">Technologies</div>
+      <div class="mat-label-large">{{ experience.technologies.join(', ') }}</div>
     </div>
   </div>
 </div>

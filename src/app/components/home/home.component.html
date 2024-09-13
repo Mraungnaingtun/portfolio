@@ -1,52 +1,47 @@
-<div>
-    <div class="header-list">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experiences">Experiences</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+<div class="home-container">
+    <div>
+        <app-navbar></app-navbar>
     </div>
-</div>
-<div class="container my-container">
-        <!-- ----------😎 about me 😎----------  -->
-        <div class="about-me">
-            <section id="about" class="my-shadow">
-                <div class="aboutme">
-                    <div><img src="assets/sc.jpg" alt="Your Photo" class="profile-photo"></div>
-                    <div class="p-3">
-                        <h3 class="logan-text">{{iam}}</h3>
-                        <p>{{aboutme}}</p>
+    <div class="container my-container" id="about">
+            <!-- ----------😎 about me 😎----------  -->
+            <div class="about-me">
+                <section  class="my-shadow">
+                    <div class="aboutme">
+                        <div><img src="assets/me.jpg" alt="Your Photo" class="profile-photo" style="object-fit: cover;"></div>
+                        <div class="p-4">
+                            <div class="logan-text mat-display-medium">{{iam}}</div>
+                            <p class="mat-body-large">{{aboutme}}</p>
+                        </div>
                     </div>
-                </div>
-            </section>
-        </div>
-        <!-- ----------😎 experience list 😎----------  -->
-        <div class="experience-list">
-            <h3 class="text-center">My Experiences</h3>
-            <app-experiences-list id="experiences"></app-experiences-list>
-        </div>
-        <!-- ---------- project list ----------  -->
-        <div class="project-list">
-            <h3 class="text-center">My Projects</h3>
-            <div class="grid-container">
-                <div class="grid-item my-shadow" *ngFor="let project of projects">
-                    <h2>{{ project.title }}</h2>
-                    <p>{{ project.description }}</p>
-                    <div class="language-badges">
-                        <span *ngFor="let language of project.languages" class="badge">{{ language }}</span>
-                    </div>
-                   <!--  <a class="view-project-button" [href]="project.link" target="_blank">View Project</a> -->
-                </div>
+                </section>
             </div>
-                    
-        </div>
-
-        <!-- ---------- contact ----------  -->
-        <div class="contact-list">
-            <h3 class="text-center pt-4">Contact</h3>
-            <section id="contact" class="my-shadow">
-                <p>Email: <a href="mailto:your.emaample.com">your.emaxample.com</a></p>
-            </section>
-        </div>
+            <!-- ----------😎 experience list 😎----------  -->
+            <div class="experience-list seperate-above-section" id="experiences">
+                <h3 class="text-center mat-headline-large fw-500">Work Experiences</h3>
+                <app-experiences-list></app-experiences-list>
+            </div>
+            <!-- ---------- project list ----------  -->
+            <div class="project-list seperate-above-section" id="projects">
+                <div class="text-center mat-headline-large">My Projects</div>
+                <div class="grid-container">
+                    <div class="grid-item my-shadow" *ngFor="let project of projects">
+                        <div class="mat-title-medium">{{ project.title }}</div>
+                        <div class="mat-body-medium t-justfiy p-4">{{ project.description }}</div>
+                        <div class="language-badges">
+                            <span *ngFor="let language of project.languages" class="badge mat-label-large" [ngClass]="getColors(language)">{{ language }}</span>
+                        </div>
+                       <!--  <a class="view-project-button" [href]="project.link" target="_blank">View Project</a> -->
+                    </div>
+                </div>
+                        
+            </div>
+    
+            <!-- ---------- contact ----------  -->
+            <div class="contact-list seperate-above-section">
+                <div class="text-center mat-headline-large pt-4">Contact</div>
+                <section id="contact" class="my-shadow">
+                    <p>Email: <a href="mailto:your.emaample.com">your.emaxample.com</a></p>
+                </section>
+            </div>
+    </div>
 </div>
