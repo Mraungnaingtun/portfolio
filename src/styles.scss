@@ -25,7 +25,7 @@ body {
 }
 
 
-.my-container{
+.my-container {
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -230,5 +230,10 @@ h2 {
     .grid-container {
         grid-template-columns: 1fr;
         /* One column on small screens */
+    }
+
+    .my-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
