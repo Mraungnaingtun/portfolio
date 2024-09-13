@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background-color: #333;
+}
+
+ul li {
+    margin: 0 1rem;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+
+ul li a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+.container {
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+section {
+    padding: 2rem;
+    margin: 1rem 0;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0px 7px 30px 0px rgba(113, 122, 131, 0.11) !important;
+}
+
+h2 {
+    color: #333;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+.project {
+    margin-bottom: 1.5rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+    ul {
+        flex-direction: column;
+    }
+
+    ul li {
+        margin: 0.5rem 0;
+    }
+
+    .aboutme {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-photo {
+        margin-bottom: 2rem;
+    }
+}
+
+.aboutme {
+    display: flex;
+    
+}
+
+.logan-text {
+    font-size: 2.1rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, #11cde6, #e70892, #220ce0);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-size: 200% 200%;
+    animation: gradient-animation 6s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
