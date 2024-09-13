@@ -35,7 +35,7 @@ p {
     text-align: justify;
 }
 
-ul {
+.header-list ul {
     list-style: none;
     padding: 0;
     display: flex;
@@ -44,18 +44,18 @@ ul {
     background-color: #333;
 }
 
-ul li {
+.header-list ul li {
     margin: 0 1rem;
 }
 
-.header-list>ul li a {
+.header-list ul li a {
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s;
 }
 
-ul li a:hover {
+.header-list ul li a:hover {
     background-color: #555;
     border-radius: 4px;
 }
