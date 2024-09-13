@@ -1,35 +1,52 @@
 <div>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</div>
-<div class="container">
-    <div style="margin-left: 5%; margin-right: 5%;">
-    <section id="about">
-        <div class="aboutme">
-            <div><img src="assets/sc.jpg" alt="Your Photo" class="profile-photo"></div>
-            <div class="p-3">
-                <h3 class="logan-text">I'm Aung Naing Tun</h3>
-                <p>I’m a mobile developer with expertise in Flutter, known for creating intuitive, user-friendly apps, including mobile banking solutions. I have strong skills in API integration, secure storage, and custom themes. I’m also experienced in Angular and Spring Boot, specializing in building dashboards, data visualization, and responsive web applications.</p>
-            </div>
-        </div>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of project 1.</p>
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of project 2.</p>
-        </div>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:your.emaample.com">your.emaxample.com</a></p>
-    </section>
+    <div class="header-list">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </div>
+</div>
+<div class="container my-container">
+        <!-- ----------😎 about me 😎----------  -->
+        <div class="about-me">
+            <section id="about" class="my-shadow">
+                <div class="aboutme">
+                    <div><img src="assets/sc.jpg" alt="Your Photo" class="profile-photo"></div>
+                    <div class="p-3">
+                        <h3 class="logan-text">{{iam}}</h3>
+                        <p>{{aboutme}}</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- ----------😎 experience list 😎----------  -->
+        <div class="experience-list">
+            <h3 class="text-center">My Experiences</h3>
+            <app-experiences-list id="experiences"></app-experiences-list>
+        </div>
+        <!-- ---------- project list ----------  -->
+        <div class="project-list">
+            <h3 class="text-center">My Projects</h3>
+            <div class="grid-container">
+                <div class="grid-item my-shadow" *ngFor="let project of projects">
+                    <h2>{{ project.title }}</h2>
+                    <p>{{ project.description }}</p>
+                    <div class="language-badges">
+                        <span *ngFor="let language of project.languages" class="badge">{{ language }}</span>
+                    </div>
+                   <!--  <a class="view-project-button" [href]="project.link" target="_blank">View Project</a> -->
+                </div>
+            </div>
+                    
+        </div>
+
+        <!-- ---------- contact ----------  -->
+        <div class="contact-list">
+            <h3 class="text-center pt-4">Contact</h3>
+            <section id="contact" class="my-shadow">
+                <p>Email: <a href="mailto:your.emaample.com">your.emaxample.com</a></p>
+            </section>
+        </div>
 </div>

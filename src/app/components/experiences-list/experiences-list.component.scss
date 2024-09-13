@@ -1,0 +1,52 @@
+
+  
+  .ex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .experience-card {
+    background-color: #fff;
+    border-radius: 10px;
+    // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    // width: 350px;
+    padding: 20px;
+    // max-height: 300px;
+    overflow: auto;
+    // transition: box-shadow 0.3s ease;
+  }
+  
+  .job-title {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .section {
+    margin-bottom: 15px;
+  }
+  
+  .section h3 {
+    color: #555;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .responsibilities {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #666;
+  }
+  
+  .responsibilities li {
+    margin-bottom: 8px;
+  }
+  
+  .card p {
+    color: #555;
+    margin: 0;
+    font-size: 1rem;
+  }
+  
