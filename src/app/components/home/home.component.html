@@ -2,31 +2,31 @@
     <div>
         <app-navbar></app-navbar>
     </div>
-    <div class="container my-container" id="about">
+    <div class="my-container" id="about">
             <!-- ----------😎 about me 😎----------  -->
-            <div class="about-me">
-                <section  class="my-shadow">
+            <div class="about-me ptop">
+                <div  class="my-card">
                     <div class="aboutme">
                         <div><img src="assets/me.jpg" alt="Your Photo" class="profile-photo" style="object-fit: cover;"></div>
-                        <div class="p-4">
+                        <div class="aboutme-text">
                             <div class="logan-text mat-display-medium">{{iam}}</div>
                             <p class="mat-body-large">{{aboutme}}</p>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
             <!-- ----------😎 experience list 😎----------  -->
-            <div class="experience-list seperate-above-section" id="experiences">
+            <div class="experience-list ptop" id="experiences">
                 <h3 class="text-center mat-headline-large fw-500">Work Experiences</h3>
                 <app-experiences-list></app-experiences-list>
             </div>
             <!-- ---------- project list ----------  -->
-            <div class="project-list seperate-above-section" id="projects">
+            <div class="project-list ptop" id="projects">
                 <div class="text-center mat-headline-large">My Projects</div>
                 <div class="grid-container">
-                    <div class="grid-item my-shadow" *ngFor="let project of projects">
+                    <div class="my-card-no-shadow" *ngFor="let project of projects">
                         <div class="mat-title-medium">{{ project.title }}</div>
-                        <div class="mat-body-medium t-justfiy p-4">{{ project.description }}</div>
+                        <div class="mat-body-medium t-justfiy project-title pt-2 pb-2">{{ project.description }}</div>
                         <div class="language-badges">
                             <span *ngFor="let language of project.languages" class="badge mat-label-large" [ngClass]="getColors(language)">{{ language }}</span>
                         </div>
@@ -37,9 +37,9 @@
             </div>
     
             <!-- ---------- contact ----------  -->
-            <div class="contact-list seperate-above-section">
+            <div class="contact-list ptop">
                 <div class="text-center mat-headline-large pt-4">Contact</div>
-                <section id="contact" class="my-shadow">
+                <section id="contact" class="my-card">
                     <p>Email: <a href="mailto:your.emaample.com">your.emaxample.com</a></p>
                 </section>
             </div>
