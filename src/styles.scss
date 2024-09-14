@@ -21,6 +21,10 @@ body {
     font-weight: 500;
 }
 
+.fw-700 {
+    font-weight: 900 !important;
+}
+
 .t-justfiy {
     text-align: justify;
 }
@@ -442,6 +446,9 @@ h2 {
 ///========================================media======================
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
+    .inner-container{
+        padding: 1rem;
+    }
     //------------------nav-----------
     .navbar {
         flex-direction: column; /* Stack items vertically */
@@ -516,3 +523,39 @@ h2 {
         padding: 1rem;
     }
 }
+
+/* Default for larger screens */
+.responsive-text {
+    color: #000;
+    font-weight: 800;
+    font-size: 3.5rem;
+    line-height: 74px;
+    font-weight: 700 !important;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Medium screens (tablets, smaller laptops) */
+@media (max-width: 992px) {
+    .responsive-text {
+        font-size: 3rem; /* Larger text for medium screens */
+        font-weight: 600; /* Slightly lighter */
+    }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 768px) {
+    .responsive-text {
+        font-size: 2.5rem;
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .responsive-text {
+        font-size: 2.2rem;
+        line-height: 50px;
+        line-height: 45px;
+    }
+}
+
