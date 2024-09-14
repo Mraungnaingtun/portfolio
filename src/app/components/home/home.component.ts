@@ -4,6 +4,7 @@ import { ExperiencesListComponent } from '../experiences-list/experiences-list.c
 import { NavbarComponent } from '../navbar/navbar.component';
 interface Project {
   title: string;
+  development:  string;
   description: string;
   link: string;
   languages: string[];
@@ -27,38 +28,44 @@ export class HomeComponent {
   projects: Project[] = [
     {
       title: 'E-commerce Platform',
+      development:'Frontend',
       description: 'A brief overview of an online store platform, including its purpose and key features.',
-      link: 'https://link-to-project1.com',
+      link: 'https://github.com/Mraungnaingtun/portfolio',
       languages: ['Java', 'Angular']
     },
     {
       title: 'Project Management Tool',
+      development:'Backend',
       description: 'A short summary of a tool designed for managing team projects and tasks efficiently.',
-      link: 'https://link-to-project2.com',
+      link: 'https://github.com/Mraungnaingtun/portfolio',
       languages: ['Java', 'Angular']
     },
     {
       title: 'Social Media Dashboard',
+      development:'Full Stack',
       description: 'A concise description of a dashboard for monitoring social media metrics and activity.',
-      link: 'https://link-to-project3.com',
+      link: 'https://github.com/Mraungnaingtun/portfolio',
       languages: ['JavaScript', 'React']
     },
     {
       title: 'Portfolio Website',
+      development:'Frontend',
       description: 'A quick introduction to a personal portfolio website showcasing projects and skills.',
-      link: 'https://link-to-project4.com',
+      link: 'https://github.com/Mraungnaingtun/portfolio',
       languages: ['HTML', 'Angular']
     },
     {
       title: 'Real-Time Chat App',
+      development:'Frontend',
       description: 'An overview of a real-time chat application with features like messaging and notifications.',
-      link: 'https://link-to-project5.com',
+      link: 'https://github.com/Mraungnaingtun/portfolio',
       languages: ['JavaScript', 'React']
     },
     {
       title: 'Employee Management System',
+      development:'Frontend',
       description: 'A brief outline of a system for managing employee data, performance, and payroll.',
-      link: 'https://link-to-project6.com',
+      link: 'https://github.com/Mraungnaingtun/portfolio',
       languages: ['Spring Boot', 'React']
     },
   ];
@@ -81,6 +88,10 @@ export class HomeComponent {
     } else {
       return "evening";
     }
+  }
+
+  getCapital(title : string){
+    return title.toUpperCase();
   }
 
 
