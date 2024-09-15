@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ExperiencesListComponent } from '../experiences-list/experiences-list.component';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { ContactsComponent } from '../contacts/contacts.component';
 interface Project {
   title: string;
   development:  string;
@@ -12,7 +13,7 @@ interface Project {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ExperiencesListComponent, NavbarComponent],
+  imports: [CommonModule, ExperiencesListComponent, NavbarComponent,ContactsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

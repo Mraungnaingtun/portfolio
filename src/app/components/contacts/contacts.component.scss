@@ -1,0 +1,57 @@
+/* Basic styling for the contact container */
+.contact-container {
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    // background-color: #f9f9f9;
+    border-radius: 10px;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Style for the heading */
+.contact-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Style for the contact icons */
+.contact-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Style for each contact icon */
+.contact-icon {
+    font-size: 30px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+/* Email icon color */
+.email-icon {
+    color: #D44638; /* Gmail's color */
+}
+
+/* Facebook icon color */
+.facebook-icon {
+    color: #1877F2; /* Facebook's color */
+}
+
+/* Telegram icon color */
+.telegram-icon {
+    color: #0088CC; /* Telegram's color */
+}
+
+/* TikTok icon color */
+.tiktok-icon {
+    color: #010101; /* TikTok's main color */
+}
+
+/* Add hover effects */
+.contact-icon:hover {
+    transform: scale(1.2); /* Slightly enlarge the icon */
+}
