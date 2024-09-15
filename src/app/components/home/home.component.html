@@ -9,8 +9,16 @@
                 <div class="aboutme">
                     <div><img src="assets/me.jpg" alt="Me" class="profile-photo" style="object-fit: cover;"></div>
                     <div class="aboutme-text">
-                        <div class="logan-text mat-display-medium">{{iam}}</div>
+                        <div class="logan-text mat-display-small">{{iam}}</div>
                         <p class="mat-body-large">{{aboutme}}</p>
+                        <div class="d-flex gap-2 pt-2">
+                            <button (click)="downloadCV()" mat-raised-button><span class="fw-semibold">CV</span></button>
+                            <button class="ml-2"  (click)="goToGitHub()" mat-raised-button>
+                                <span class="fw-semibold">
+                                    GitHub
+                                </span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -22,8 +30,8 @@
         </div>
     </div>
     <div class="white-background">
-         <!-- ---------- project list ----------  -->
-         <div class="project-list container inner-white-container" id="projects">
+        <!-- ---------- project list ----------  -->
+        <div class="project-list container inner-white-container" id="projects">
             <div class="text-center mat-headline-large">My Projects</div>
             <div class="grid-container">
                 <div class="my-card-no-shadow" *ngFor="let project of projects">

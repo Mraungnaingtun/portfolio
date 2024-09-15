@@ -1,18 +1,76 @@
 <div class="ex-container">
-  <div class="my-card" *ngFor="let experience of experiences">
-    <div class="job-title mat-title-large">
-      {{ experience.jobTitle }}
+  <!-- Job Title and Date -->
+  <div class="job-title mat-title-large">
+    {{ experiences.jobTitle }}
+  </div>
+  <div class="mat-body-large" style="color: #777;">
+    ({{ experiences.fromDate }} to {{ experiences.toDate }})
+  </div>
+
+  <div class="experience-grid pt-3">
+    <!-- Backend Card -->
+    <div class="my-card" *ngIf="experiences.responsibilities.backend.responsibilities.length">
+      <div class="mat-headline-small fw-500">Backend</div>
+
+      <div>
+        <strong>Responsibilities:</strong>
+        <ul class="responsibilities">
+          <li *ngFor="let item of experiences.responsibilities.backend.responsibilities"
+            class="mat-body-large t-justify">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+      <!-- Tech -->
+      <div class="language-badges">
+        <span *ngFor="let tech of experiences.responsibilities.backend.technologies"
+          class="all-language badge mat-label-large">
+          {{ tech }}
+        </span>
+      </div>
     </div>
-      <div class="mat-body-large" style="color: #777;;">({{ experience.fromdate }} to {{experience.todate}})</div>
-    <div class="section  pt-2">
-      <div class="mat-headline-small fw-500">Responsibilities</div>
-      <ul class="responsibilities">
-        <li *ngFor="let responsibility of experience.responsibilities" class="mat-body-large t-justfiy">{{ responsibility }}</li>
-      </ul>
+
+    <!-- Frontend Card -->
+    <div class="my-card" *ngIf="experiences.responsibilities.frontend.responsibilities.length">
+      <div class="mat-headline-small fw-500">Frontend</div>
+
+      <div>
+        <strong>Responsibilities:</strong>
+        <ul class="responsibilities">
+          <li *ngFor="let item of experiences.responsibilities.frontend.responsibilities"
+            class="mat-body-large t-justify">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+      <!-- Tech -->
+      <div class="language-badges">
+        <span *ngFor="let tech of experiences.responsibilities.frontend.technologies"
+          class="all-language badge mat-label-large">
+          {{ tech }}
+        </span>
+      </div>
     </div>
-    <div class="section">
-      <div class="mat-headline-small fw-500">Technologies</div>
-      <div class="mat-label-large">{{ experience.technologies.join(', ') }}</div>
+
+    <!-- Database Card -->
+    <div class="my-card" *ngIf="experiences.responsibilities.database.responsibilities.length">
+      <div class="mat-headline-small fw-500">Database</div>
+      <div>
+        <strong>Responsibilities:</strong>
+        <ul class="responsibilities">
+          <li *ngFor="let item of experiences.responsibilities.database.responsibilities"
+            class="mat-body-large t-justify">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+      <!-- Tech -->
+      <div class="language-badges">
+        <span *ngFor="let tech of experiences.responsibilities.database.technologies"
+          class="all-language badge mat-label-large">
+          {{ tech }}
+        </span>
+      </div>
     </div>
   </div>
 </div>

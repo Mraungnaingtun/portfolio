@@ -3,9 +3,10 @@ import { Component } from '@angular/core';
 import { ExperiencesListComponent } from '../experiences-list/experiences-list.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ContactsComponent } from '../contacts/contacts.component';
+import { MatButtonModule } from '@angular/material/button';
 interface Project {
   title: string;
-  development:  string;
+  development: string;
   description: string;
   link: string;
   languages: string[];
@@ -13,71 +14,85 @@ interface Project {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ExperiencesListComponent, NavbarComponent,ContactsComponent],
+  imports: [
+    CommonModule,
+    ExperiencesListComponent,
+    NavbarComponent,
+    ContactsComponent,
+    MatButtonModule
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 
-  iam = "I'm Aung Naing Tun";
+  iam = "Aung Naing Tun";
 
-  aboutme = `I'm a Full Stack Web Developer 😎 with expertise in frontend technologies like Angular.js
-             and React.js, as well as backend development using Java Spring Boot. With experience 
-             in building and optimizing RESTful APIs and banking applications, holds a Bachelor's degree
-              in Computer Science and has participated in the ICPC (2017, 2018).`;
+  aboutme = `I'm a Full Stack Web Developer 😎 and proficient in building scalable and efficient web solutions.
+   I enjoy collaborating with cross-functional teams to create innovative software solutions that meet user needs.
+   I have accumulated ${this.calculateYearMonth()} of professional experience.`;
+
+  github_link = 'https://github.com/Mraungnaingtun';
 
   projects: Project[] = [
     {
       title: 'E-commerce Platform',
-      development:'Frontend',
+      development: 'Frontend',
       description: 'A brief overview of an online store platform, including its purpose and key features.',
       link: 'https://github.com/Mraungnaingtun/portfolio',
       languages: ['Java', 'Angular']
     },
     {
       title: 'Project Management Tool',
-      development:'Backend',
+      development: 'Backend',
       description: 'A short summary of a tool designed for managing team projects and tasks efficiently.',
       link: 'https://github.com/Mraungnaingtun/portfolio',
       languages: ['Java', 'Angular']
     },
     {
       title: 'Social Media Dashboard',
-      development:'Full Stack',
+      development: 'Full Stack',
       description: 'A concise description of a dashboard for monitoring social media metrics and activity.',
       link: 'https://github.com/Mraungnaingtun/portfolio',
       languages: ['JavaScript', 'React']
     },
     {
       title: 'Portfolio Website',
-      development:'Frontend',
+      development: 'Frontend',
       description: 'A quick introduction to a personal portfolio website showcasing projects and skills.',
       link: 'https://github.com/Mraungnaingtun/portfolio',
       languages: ['HTML', 'Angular']
     },
     {
       title: 'Real-Time Chat App',
-      development:'Frontend',
+      development: 'Frontend',
       description: 'An overview of a real-time chat application with features like messaging and notifications.',
       link: 'https://github.com/Mraungnaingtun/portfolio',
       languages: ['JavaScript', 'React']
     },
     {
       title: 'Employee Management System',
-      development:'Frontend',
+      development: 'Frontend',
       description: 'A brief outline of a system for managing employee data, performance, and payroll.',
       link: 'https://github.com/Mraungnaingtun/portfolio',
       languages: ['Spring Boot', 'React']
     },
   ];
 
+  goToGitHub() {
+    window.open(this.github_link, '_blank');
+  }
 
 
-  getColors(language: string) {
-    if (language) {
-      return language.toLowerCase().replace(/\s+/g, '-');
-    }
-    return '';
+
+  downloadCV() {
+    const cvUrl = 'assets/aungnaingtun.pdf';
+    const a = document.createElement('a');
+    a.href = cvUrl;
+    a.download = 'aungnaingtun.pdf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   }
 
   getGreeting(): string {
@@ -91,9 +106,23 @@ export class HomeComponent {
     }
   }
 
-  getCapital(title : string){
+  getCapital(title: string) {
     return title.toUpperCase();
   }
 
+  calculateYearMonth(): string {
+    const start = new Date('2022-10-01');
+    const today = new Date();
 
+    let years = today.getFullYear() - start.getFullYear();
+    let months = today.getMonth() - start.getMonth();
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    return `${years} year${years !== 1 ? 's' : ''} ${months} month${months !== 1 ? 's' : ''}`;
+
+  }
 }
