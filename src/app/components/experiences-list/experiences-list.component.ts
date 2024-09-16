@@ -22,7 +22,8 @@ export class ExperiencesListComponent {
             "Built and maintained secure, high-performance banking and other systems",
             "Developed microservices for high-volume transactions",
             "Implemented data encryption and secure authentication",
-            "Used CI/CD on cloud platforms with Docker" 
+            "Performance Testing(Load Testing, Stress Testing,...)",
+            "CI/CD on cloud platforms with Docker" 
           ]
         },
         frontend: {
@@ -31,6 +32,8 @@ export class ExperiencesListComponent {
             "Developed web applications for international clients",
             "Created responsive and user-friendly interfaces",
             "Collaborated with designers to implement designs",
+            "Integrated RESTful APIs to fetch and display data",
+            "Implemented responsive design principles for various screen sizes",
             "Improved application performance"
           ]
         },
@@ -40,7 +43,9 @@ export class ExperiencesListComponent {
            "Optimized database queries and schemas",
             "Designed relational databases for banking systems",
             "Improved SQL query performance for high-volume data",
-            "Worked with NoSQL databases" 
+            "Worked with NoSQL databases",
+            "Migrated data between different database systems",
+            "Documented database schemas",
           ]
         },
       }
