@@ -30,24 +30,24 @@ export class HomeComponent {
 
   aboutme = `I'm a Full Stack Web Developer 😎 and proficient in building scalable and efficient web solutions.
    I enjoy collaborating with cross-functional teams to create innovative software solutions that meet user needs.
-   I have accumulated ${this.calculateYearMonth()} of professional experience.`;
+   I have accumulated ${this.calculateYearMonth()} of professional experience.I love latest technologies.`;
 
   github_link = 'https://github.com/Mraungnaingtun';
 
   projects: Project[] = [
     {
-      title: 'E-commerce Platform',
-      development: 'Frontend',
-      description: 'A brief overview of an online store platform, including its purpose and key features.',
-      link: 'https://github.com/Mraungnaingtun/portfolio',
-      languages: ['Java', 'Angular']
+      title: 'Spring CRUD with Thymeleaf',
+      development: 'Full Stack',
+      description: 'Building a CRUD application based on the MVC framework, leveraging Thymeleaf for user interface management.',
+      link: 'https://github.com/Mraungnaingtun/spring-crud-thymeleaf',
+      languages: ['Java', 'Mysql', 'Thymeleaf']
     },
     {
-      title: 'Project Management Tool',
-      development: 'Backend',
-      description: 'A short summary of a tool designed for managing team projects and tasks efficiently.',
-      link: 'https://github.com/Mraungnaingtun/portfolio',
-      languages: ['Java', 'Angular']
+      title: 'Shwe Calculator',
+      development: 'Frontend',
+      description: 'Gold Calculator with Myanmar Measurement (Kyat,Pay,Roy).It can Calculate gold to money and money to gold implemented by a mobile app I developed which is used by many customer from myanmar.',
+      link: 'https://github.com/Mraungnaingtun/shwe',
+      languages: ['React']
     },
     {
       title: 'Social Media Dashboard',
@@ -79,14 +79,14 @@ export class HomeComponent {
     },
   ];
 
-  goToGitHub() {
-    window.open(this.github_link, '_blank');
+  goToGitHub(link: string) {
+    window.open(link, '_blank');
   }
 
 
 
   downloadCV() {
-    const cvUrl = 'assets/aungnaingtun.pdf';
+    const cvUrl = 'assets/cv.pdf';
     const a = document.createElement('a');
     a.href = cvUrl;
     a.download = 'aungnaingtun.pdf';
