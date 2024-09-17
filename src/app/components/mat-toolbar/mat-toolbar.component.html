@@ -1,17 +1,16 @@
 <mat-toolbar color="primary">
-   
-    <span>Portfolio</span>
+    <img src="assets/portfolio2.svg" alt="logo">
+    <span style="padding-left: 10px;">Portfolio</span>
     <span class="spacer"></span>
-  
     <mat-menu #menu>
       <a mat-menu-item *ngFor="let item of menuItems" [href]="item.link">
-        {{ item.label }}
+        <div class="mat-body-medium">{{ item.label }}</div>
       </a>
     </mat-menu>
   
     <div class="menu-items">
       <a mat-button *ngFor="let item of menuItems" [href]="item.link">
-        {{ item.label }}
+        <div class="mat-body-medium">{{ item.label }}</div>
       </a>
     </div>
   

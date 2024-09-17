@@ -1,9 +1,9 @@
 <div class="home-container">
     <!-- <app-navbar></app-navbar> -->
-     <app-mat-toolbar></app-mat-toolbar>
+    <app-mat-toolbar></app-mat-toolbar>
     <div id="about">
         <!-- ----------😎 about me 😎----------  -->
-        <div class="about-me ptop container">
+        <div class="about-me container">
             <div class="responsive-text py-4">Welcome to my portfolio, I hope you're having a Great {{getGreeting()}}!
             </div>
             <mat-card appearance="raised">
@@ -14,10 +14,10 @@
                             <div class="logan-text mat-display-small">{{iam}}</div>
                             <p class="mat-body-large">{{aboutme}}</p>
                             <div class="d-flex gap-2 pt-2">
-                                <button (click)="downloadCV()" mat-raised-button><span
-                                        class="fw-semibold">CV</span></button>
-                                <button class="ml-2" (click)="goToGitHub(github_link)" mat-raised-button
-                                    color="primary">
+                                <button (click)="downloadCV()" matTooltip="Click to download my CV"
+                                    mat-raised-button><span class="fw-semibold">CV</span></button>
+                                <button class="ml-2" (click)="goToGitHub(github_link)" matTooltip="Go to my GitHub"
+                                    mat-raised-button color="primary">
                                     <span class="fw-semibold">
                                         GitHub
                                     </span>
@@ -28,25 +28,28 @@
                 </mat-card-content>
             </mat-card>
         </div>
+        <div class="container my-padding-top education-skill" id="education-skill">
+            <app-edu-skill></app-edu-skill>
+        </div>
         <!-- ----------😎 experience list 😎----------  -->
-        <div class="experience-list container" id="experiences">
+        <div class="experience-list my-padding-top container" id="experiences">
             <h3 class="text-center mat-headline-large fw-500">Work Experiences</h3>
             <app-experiences-list></app-experiences-list>
         </div>
     </div>
-    <div class="white-background">
-        <!-- ---------- project list ----------  -->
-        <div class="project-list container" id="projects">
-            <div class="text-center mat-headline-large">My Projects</div>
-            <app-project></app-project>
-        </div>
 
-        <!-- ---------- contact ----------  -->
-        <div class="contact-list ptop">
-            <div class="text-center mat-headline-large pt-4">Contact</div>
-            <div id="contact">
-                <app-contacts></app-contacts>
-            </div>
+    <!-- ---------- project list ----------  -->
+    <div class="project-list my-padding-top container" id="projects">
+        <div class="text-center mat-headline-large">My Projects</div>
+        <app-project></app-project>
+    </div>
+
+    <!-- ---------- contact ----------  -->
+    <div class="contact-list my-padding-top">
+        <div class="text-center mat-headline-large pt-4">Contact</div>
+        <div id="contact">
+            <app-contacts></app-contacts>
         </div>
     </div>
+
 </div>

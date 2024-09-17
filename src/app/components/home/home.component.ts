@@ -8,6 +8,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { ProjectComponent } from '../project/project.component';
 import {MatCardModule} from '@angular/material/card';
 import { MatToolbarComponent } from '../mat-toolbar/mat-toolbar.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { EduSkillComponent } from '../edu-skill/edu-skill.component';
 
 
 @Component({
@@ -22,7 +24,9 @@ import { MatToolbarComponent } from '../mat-toolbar/mat-toolbar.component';
     MatSlideToggleModule,
     ProjectComponent,
     MatCardModule,
-    MatToolbarComponent
+    MatToolbarComponent,
+    MatTooltipModule,
+    EduSkillComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

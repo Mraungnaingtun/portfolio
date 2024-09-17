@@ -1,0 +1,26 @@
+<div class="edu-skill">
+    <div class="edu-and-skill">
+        <h2>Education</h2>
+        <div class="degree">B.C.Sc (Bachelor Degree of Computer Science)</div>
+        <div class="completed-year" style="font-style: italic;">2015 - 2020</div>
+        <mat-divider></mat-divider>
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li><mat-chip *ngFor="let tech of skills" class="chip-container mat-label-medium">{{ tech }}</mat-chip></li>
+        </ul>
+    </div>
+    <div class="uni-photo">
+        <img src="assets/ucsy.jpg" alt="ucsy" />
+    </div>
+    <!-- <div>
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>Java Spring Boot</li>
+            <li>Azure Functions with Java</li>
+            <li>Angular.js, React.js</li>
+            <li>MySQL, MS SQL, PostgreSQL</li>
+            <li>Docker</li>
+            <li>HTML, CSS, JavaScript</li>
+        </ul>
+    </div> -->
+</div>

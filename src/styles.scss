@@ -57,10 +57,6 @@ body {
     font-weight: 900 !important;
 }
 
-.t-justfiy {
-    text-align: justify;
-}
-
 .aboutme-text {
     padding-left: 40px;
 }
@@ -215,6 +211,11 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.my-padding-top{
+    padding-top: 3rem;
 }
 
 ///========================================media======================

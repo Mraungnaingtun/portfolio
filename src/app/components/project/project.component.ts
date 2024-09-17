@@ -23,14 +23,14 @@ export class ProjectComponent {
 
   projects: Project[] = [
     {
-      title: 'Mini Banking API',
+      title: 'Banking & unit test',
       development: 'Backend',
       description: 'Banking Management System with unit test and integration test.',
       link: 'https://github.com/Mraungnaingtun/banking-unit-test',
       languages: ['Spring Boot', 'JUnit5', 'Postgres']
     },
     {
-      title: 'Spring CRUD with Thymeleaf',
+      title: 'Spring CRUD & thymeleaf',
       development: 'Full Stack',
       description: 'Building a CRUD application based on the MVC framework, leveraging Thymeleaf for user interface management.',
       link: 'https://github.com/Mraungnaingtun/spring-crud-thymeleaf',
@@ -51,7 +51,7 @@ export class ProjectComponent {
       languages: ['Spring Boot', 'Postgres']
     },
     {
-      title: 'Angular API Call',
+      title: 'Angular & api calling',
       development: 'Frontend',
       description: 'Project with api calling using angular with simple and better way with DTO',
       link: 'https://github.com/Mraungnaingtun/api-call-in-angular',
