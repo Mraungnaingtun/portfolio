@@ -20,4 +20,12 @@ export class NavbarComponent {
   closeMenu() {
     this.isMenuOpen = false;
   }
+  
+  theme = 'dark';
+
+  toggleTheme() {
+    this.theme = this.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('light-theme', this.theme === 'light');
+  }
+
 }  

@@ -1,4 +1,59 @@
+@use '@angular/material' as mat;
+@use './app/lighttheme.scss';
+@use './app/darktheme.scss';
+@include mat.core();
 @import "_variable";
+
+$lightTheme: lighttheme.$light-theme;
+$darkTheme: darktheme.$dark-theme;
+
+
+//===================default dark theme================
+:root{
+    @include mat.all-component-themes($darkTheme);
+    body {
+        background-color: $main-dark-bg-color;
+        color: $main-dark-color
+    }
+
+    header{
+        background-color: $main-dark-bg-color;
+    }
+
+    .my-navbar-brand, .navbar-menu li a{
+        color: $main-dark-color;
+    }
+
+    .menu-icon mat-icon {
+        color: $main-dark-color;
+    }
+}
+
+
+// ============ light theme =====================
+.light-theme {
+    @include mat.all-component-colors($lightTheme);
+    body {
+        background-color: $main-light-bg-color;
+        color: $main-light-color;
+    }
+
+    header{
+        background-color: $main-light-bg-color;
+    }
+
+    .my-navbar-brand, .navbar-menu li a{
+        color: $main-light-color;
+    }
+
+    .menu-icon mat-icon {
+        color: #333;
+    }
+}
+
+@include mat.color-variants-backwards-compatibility($darkTheme);
+@include mat.typography-hierarchy($darkTheme);
+
 
 html,
 body {
@@ -8,7 +63,6 @@ body {
 body {
     margin: 0;
     font-family: 'Noto Sans', "Helvetica Neue", sans-serif;
-    background-color: #ffffff;
 }
 
 
@@ -45,19 +99,8 @@ body {
     margin: 1rem 0;
 }
 
-.soft-background {
-    background-color: #f4f9f5;
-    padding-bottom: 1rem;
-}
-
 .inner-container {
     padding: 2% 10%;
-}
-
-
-
-.inner-white-container {
-    background-color: #ffffff;
 }
 
 p {
@@ -71,7 +114,7 @@ p {
     display: block;
     margin-top: 20px;
     text-decoration: none;
-    color: #007b8f;
+    color: $primary-color;
     font-weight: 600;
     font-size: 0.95em;
 }
@@ -93,7 +136,6 @@ p {
     display: flex;
     justify-content: center;
     margin: 0;
-    background-color: #333;
 }
 
 .header-list ul li {
@@ -101,14 +143,12 @@ p {
 }
 
 .header-list ul li a {
-    color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s;
 }
 
 .header-list ul li a:hover {
-    background-color: #555;
     border-radius: 4px;
 }
 
@@ -119,29 +159,20 @@ p {
 
 .my-card {
     padding: 2rem;
-    background-color: #fff;
     border-radius: $main-border-radius;
-    // box-shadow: $shadow;
     border: $my-border;
 }
 
 .my-card-no-shadow {
     padding: 2rem;
     border: 1px solid #cfcfcf;
-    background-color: #fff;
     border-radius: $main-border-radius;
-    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
 }
 
 .my-card-no-shadow:hover {
     box-shadow:
         0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-h2 {
-    color: #333;
 }
 
 .profile-photo {
@@ -214,29 +245,6 @@ h2 {
     margin: 10px 0;
 }
 
-/* Description inside the grid item */
-.grid-item p {
-    // font-size: 0.9em;
-    color: #555;
-}
-
-/* Button to view the project */
-.view-project-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.view-project-button:hover {
-    background-color: #0056b3;
-}
-
-
 
 .language-list {
     list-style-type: none;
@@ -255,17 +263,8 @@ h2 {
     margin: 10px 0;
 }
 
-.badge {
-    display: inline-block;
-    background-color: #0f03b1;
-    color: #fff;
-    border-radius: 5px;
-    padding: 3px 6px;
+.chip-container {
     margin: 5px 3px;
-}
-
-.all-language {
-    background-color: #8ea0a5;
 }
 
 .experience-grid {
@@ -274,60 +273,55 @@ h2 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.experience-card {
-    background-color: #fff;
-    border-radius: $main-border-radius;
-    padding: 20px;
-    overflow: auto;
-}
 
 .job-title {
-    color: #333;
     margin-bottom: 15px;
-}
-
-.section {
-    margin-bottom: 15px;
-}
-
-.section h3 {
-    color: #555;
-    margin-bottom: 10px;
 }
 
 .responsibilities {
     list-style-type: disc;
     padding-left: 20px;
-    color: #666;
 }
 
 .responsibilities li {
     margin-bottom: 8px;
 }
 
-.card p {
-    color: #555;
-    margin: 0;
-    // font-size: 1rem;
+.df-jc-ac{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.theme-icon{
+    margin: 0; 
+    padding: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.my-menu {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 //============== nav ================================
 
 header {
-    background-color: #ffffff;
     padding: 0px 20px;
-    border-bottom: 1px solid #cadde0;
     width: 100%;
     position: fixed;
     top: 0;
     z-index: 1000;
 }
 
-.navbar {
+.my-navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0;
     flex-wrap: nowrap;
 }
 
@@ -335,18 +329,13 @@ header {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    /* Prevent the brand from shrinking */
 }
 
-.navbar-brand {
-    // color: #ecf0f1;
+.my-navbar-brand {
     text-decoration: none;
-    // font-size: 26px;
     font-weight: 600 !important;
     margin-right: 20px;
-    /* Space between brand and menu */
     white-space: nowrap;
-    /* Prevents brand from wrapping */
 }
 
 .navbar-menu {
@@ -364,8 +353,6 @@ header {
 }
 
 .navbar-menu li a {
-    // font-family: 'Lato';
-    color: rgb(82 87 90);
     text-decoration: none;
     padding: 10px 15px;
     font-weight: 500;
@@ -382,7 +369,6 @@ header {
 /* Mobile responsiveness */
 .navbar-toggle {
     display: none;
-    /* Hidden by default */
     background: none;
     border: none;
     cursor: pointer;
@@ -400,11 +386,6 @@ header {
     transition: transform 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-.menu-icon mat-icon {
-    color: #333;
-    /* Default color */
-}
-
 .menu-icon:hover {
     background-color: #d8dde2;
     border-radius: 50%;
@@ -419,11 +400,9 @@ header {
     }
 
     //------------------nav-----------
-    .navbar {
+    .my-navbar {
         flex-direction: column;
-        /* Stack items vertically */
         align-items: flex-start;
-        /* Align items to the left */
     }
 
     .navbar-header {
@@ -442,7 +421,6 @@ header {
 
     .navbar-menu.active {
         display: flex;
-        /* Show menu when active */
     }
 
     .navbar-menu li {
@@ -452,9 +430,7 @@ header {
 
     .navbar-toggle {
         display: block;
-        /* Show the toggle button */
     }
-
 
     //------------------nav- end----------
 
@@ -467,7 +443,7 @@ header {
         padding-left: 0px;
     }
 
-    .job{
+    .job {
         text-align: center;
     }
 }
@@ -492,7 +468,6 @@ header {
 
     .grid-container {
         grid-template-columns: 1fr;
-        /* One column on small screens */
     }
 
     .inner-container {
@@ -502,7 +477,6 @@ header {
 
 /* Default for larger screens */
 .responsive-text {
-    color: #000;
     font-weight: 800;
     font-size: 3.5rem;
     line-height: 74px;

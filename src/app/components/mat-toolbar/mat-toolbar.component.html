@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+   
+    <span>Portfolio</span>
+    <span class="spacer"></span>
+  
+    <mat-menu #menu>
+      <a mat-menu-item *ngFor="let item of menuItems" [routerLink]="item.link">
+        {{ item.label }}
+      </a>
+    </mat-menu>
+  
+    <div class="menu-items">
+      <a mat-button *ngFor="let item of menuItems" [routerLink]="item.link">
+        {{ item.label }}
+      </a>
+    </div>
+  
+    <div class="theme-icon">
+      <mat-icon aria-hidden="false" aria-label="toggle theme"
+                [fontIcon]="theme === 'dark' ? 'dark_mode' : 'light_mode'" (click)="toggleTheme()">
+      </mat-icon>
+    </div>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+        <mat-icon>menu</mat-icon>
+      </button>
+  </mat-toolbar>

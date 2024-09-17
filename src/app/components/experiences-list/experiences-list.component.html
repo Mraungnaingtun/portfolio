@@ -11,68 +11,85 @@
 
   <div class="experience-grid pt-3">
     <!-- Backend Card -->
-    <div class="my-card" *ngIf="experiences.responsibilities.backend.responsibilities.length">
-      <div class="mat-headline-small fw-500">Backend</div>
-
-      <div>
-        <strong>Responsibilities:</strong>
-        <ul class="responsibilities">
-          <li *ngFor="let item of experiences.responsibilities.backend.responsibilities"
-            class="mat-body-large t-justify">
-            {{ item }}
-          </li>
-        </ul>
-      </div>
-      <!-- Tech -->
-      <div class="language-badges">
+    <mat-card appearance="raised" *ngIf="experiences.responsibilities.backend.responsibilities.length">
+      <mat-card-content>
+        <div >
+          <div class="mat-headline-small fw-500">Backend</div>
+          <div>
+            <strong>Responsibilities:</strong>
+            <ul class="responsibilities">
+              <li *ngFor="let item of experiences.responsibilities.backend.responsibilities"
+                class="mat-body-large t-justify">
+                {{ item }}
+              </li>
+            </ul>
+          </div>
+          <!-- Tech -->
+          <!-- <div class="language-badges">
         <span *ngFor="let tech of experiences.responsibilities.backend.technologies"
           class="all-language badge mat-label-large">
           {{ tech }}
         </span>
-      </div>
-    </div>
+      </div> -->
+        </div>
+      </mat-card-content>
+    </mat-card>
 
     <!-- Frontend Card -->
-    <div class="my-card" *ngIf="experiences.responsibilities.frontend.responsibilities.length">
-      <div class="mat-headline-small fw-500">Frontend</div>
-
-      <div>
-        <strong>Responsibilities:</strong>
-        <ul class="responsibilities">
-          <li *ngFor="let item of experiences.responsibilities.frontend.responsibilities"
-            class="mat-body-large t-justify">
-            {{ item }}
-          </li>
-        </ul>
-      </div>
-      <!-- Tech -->
-      <div class="language-badges">
+    <mat-card *ngIf="experiences.responsibilities.frontend.responsibilities.length">
+      <mat-card-content>
+        <div >
+          <div class="mat-headline-small fw-500">Frontend</div>
+          <div>
+            <strong>Responsibilities:</strong>
+            <ul class="responsibilities">
+              <li *ngFor="let item of experiences.responsibilities.frontend.responsibilities"
+                class="mat-body-large t-justify">
+                {{ item }}
+              </li>
+            </ul>
+          </div>
+          <!-- Tech -->
+          <!-- <div class="language-badges">
         <span *ngFor="let tech of experiences.responsibilities.frontend.technologies"
           class="all-language badge mat-label-large">
           {{ tech }}
         </span>
-      </div>
-    </div>
+      </div> -->
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+
 
     <!-- Database Card -->
-    <div class="my-card" *ngIf="experiences.responsibilities.database.responsibilities.length">
-      <div class="mat-headline-small fw-500">Database</div>
-      <div>
-        <strong>Responsibilities:</strong>
-        <ul class="responsibilities">
-          <li *ngFor="let item of experiences.responsibilities.database.responsibilities"
-            class="mat-body-large t-justify">
-            {{ item }}
-          </li>
-        </ul>
-      </div>
-      <!-- Tech -->
-      <div class="language-badges">
-        <span *ngFor="let tech of experiences.responsibilities.database.technologies"
-          class="all-language badge mat-label-large">
-          {{ tech }}
-        </span>
-      </div>
-    </div>
+    <mat-card *ngIf="experiences.responsibilities.database.responsibilities.length">
+      <mat-card-content>
+        <div>
+          <div class="mat-headline-small fw-500">Database</div>
+          <div>
+            <strong>Responsibilities:</strong>
+            <ul class="responsibilities">
+              <li *ngFor="let item of experiences.responsibilities.database.responsibilities"
+                class="mat-body-large t-justify">
+                {{ item }}
+              </li>
+            </ul>
+          </div>
+          <!-- Tech -->
+          <div class="language-badges">
+            <span *ngFor="let tech of experiences.responsibilities.database.technologies"
+              class="all-language badge mat-label-large">
+              {{ tech }}
+            </span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+
+
+
+
   </div>
 </div>

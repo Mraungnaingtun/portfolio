@@ -1,0 +1,18 @@
+<div class="grid-container">
+    <!-- (click)="goToGitHub(project.link)" -->
+    <mat-card *ngFor="let project of projects">
+        <mat-card-content >
+            <div>
+                <div class="mat-title-medium py-2">{{getCapital(project.development)}}</div>
+                <div class="mat-title-large py-2" style="font-weight: 600;">{{ project.title }}</div>
+                <div class="mat-body-medium t-justfiy py-4">{{ project.description }}</div>
+                <div>
+                    <mat-chip *ngFor="let language of project.languages" class="chip-container mat-label-medium">{{ language }}</mat-chip>
+                </div>
+                <!-- </mat-chip-set> -->
+                <a [href]="project.link" class="github-link" target="_blank">View on GitHub</a>
+            </div>
+        </mat-card-content>
+      </mat-card>
+   
+</div>

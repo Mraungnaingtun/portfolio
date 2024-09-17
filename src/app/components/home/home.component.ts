@@ -4,13 +4,13 @@ import { ExperiencesListComponent } from '../experiences-list/experiences-list.c
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ContactsComponent } from '../contacts/contacts.component';
 import { MatButtonModule } from '@angular/material/button';
-interface Project {
-  title: string;
-  development: string;
-  description: string;
-  link: string;
-  languages: string[];
-}
+import { MatIconModule } from '@angular/material/icon';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { ProjectComponent } from '../project/project.component';
+import {MatCardModule} from '@angular/material/card';
+import { MatToolbarComponent } from '../mat-toolbar/mat-toolbar.component';
+
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -19,7 +19,12 @@ interface Project {
     ExperiencesListComponent,
     NavbarComponent,
     ContactsComponent,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatSlideToggleModule,
+    ProjectComponent,
+    MatCardModule,
+    MatToolbarComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -33,51 +38,6 @@ export class HomeComponent {
    I have accumulated ${this.calculateYearMonth()} of professional experience.I love latest technologies.`;
 
   github_link = 'https://github.com/Mraungnaingtun';
-
-  projects: Project[] = [
-    {
-      title: 'Mini Banking API',
-      development: 'Backend',
-      description: 'Banking Management System with unit test and integration test.',
-      link: 'https://github.com/Mraungnaingtun/banking-unit-test',
-      languages: ['Spring Boot','JUnit5','Postgres']
-    },
-    {
-      title: 'Spring CRUD with Thymeleaf',
-      development: 'Full Stack',
-      description: 'Building a CRUD application based on the MVC framework, leveraging Thymeleaf for user interface management.',
-      link: 'https://github.com/Mraungnaingtun/spring-crud-thymeleaf',
-      languages: ['Spring Boot', 'Mysql', 'Thymeleaf']
-    },
-    {
-      title: 'Myanmar Gold Calculator',
-      development: 'Frontend',
-      description: 'Calculator of gold with Myanmar Measurement (Kyat,Pay,Roy) currently used by many users with a mobile app',
-      link: 'https://github.com/Mraungnaingtun/shwe',
-      languages: ['React']
-    },
-    {
-      title: 'Oauth2 Resource Server',
-      development: 'Backend',
-      description: 'Authentication and Authorization with latest spring version and spring security version',
-      link: 'https://github.com/Mraungnaingtun/oauth2-resource-server',
-      languages: ['Spring Boot', 'Postgres']
-    },
-    {
-      title: 'Angular API Call',
-      development: 'Frontend',
-      description: 'Project with api calling using angular with simple and better way with DTO',
-      link: 'https://github.com/Mraungnaingtun/api-call-in-angular',
-      languages: ['Spring Boot', 'React']
-    },
-    {
-      title: 'Portfolio Website',
-      development: 'Frontend',
-      description: 'A quick introduction to a personal portfolio website showcasing projects and skills.',
-      link: 'https://github.com/Mraungnaingtun/portfolio',
-      languages: ['Angular']
-    },
-  ];
 
   goToGitHub(link: string) {
     window.open(link, '_blank');
@@ -106,9 +66,6 @@ export class HomeComponent {
     }
   }
 
-  getCapital(title: string) {
-    return title.toUpperCase();
-  }
 
   calculateYearMonth(): string {
     const start = new Date('2022-10-01');
