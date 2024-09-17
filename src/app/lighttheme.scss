@@ -142,7 +142,7 @@ $light-theme: mat.define-theme((
     tertiary: $_tertiary,
   ),
   typography: (
-    use-system-variables: true,
+    plain-family: 'Lato',
   ),
 ));
 $dark-theme: mat.define-theme((

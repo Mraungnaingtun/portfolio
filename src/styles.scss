@@ -40,9 +40,13 @@ body {
     height: 100%;
 }
 
+* {
+    font-family: "Lato", sans-serif;
+}
+
 body {
     margin: 0;
-    font-family: $devsite-primary-font-family;
+    font-family: "Lato", sans-serif;
 }
 
 .fw-500 {
