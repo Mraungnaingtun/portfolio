@@ -8,21 +8,16 @@
 
 .menu-items {
     display: flex;
-    /* Arrange items horizontally on large screens */
     margin-left: auto;
-    /* Align to the right */
 }
 
 .theme-icon {
     margin-left: 10px;
-    /* Adjust spacing as needed */
 }
 
-/* Optional: Media Query for Mobile Responsiveness */
 @media (max-width: 768px) {
     .menu-items {
         display: none;
-        /* Hide menu items on small screens */
     }
 
     .menu-button {

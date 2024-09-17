@@ -8,47 +8,27 @@ $lightTheme: lighttheme.$light-theme;
 $darkTheme: darktheme.$dark-theme;
 
 
-//===================default dark theme================
-:root{
-    @include mat.all-component-themes($darkTheme);
+
+@mixin theme-common($bg-color, $text-color) {
+
     body {
-        background-color: $main-dark-bg-color;
-        color: $main-dark-color
+        background-color: $bg-color;
+        color: $text-color;
     }
+}
 
-    header{
-        background-color: $main-dark-bg-color;
-    }
 
-    .my-navbar-brand, .navbar-menu li a{
-        color: $main-dark-color;
-    }
-
-    .menu-icon mat-icon {
-        color: $main-dark-color;
-    }
+//===================default dark theme================
+:root {
+    @include mat.all-component-themes($darkTheme);
+    @include theme-common($main-dark-bg-color, $main-dark-color);
 }
 
 
 // ============ light theme =====================
 .light-theme {
     @include mat.all-component-colors($lightTheme);
-    body {
-        background-color: $main-light-bg-color;
-        color: $main-light-color;
-    }
-
-    header{
-        background-color: $main-light-bg-color;
-    }
-
-    .my-navbar-brand, .navbar-menu li a{
-        color: $main-light-color;
-    }
-
-    .menu-icon mat-icon {
-        color: #333;
-    }
+    @include theme-common($main-light-bg-color, $main-light-color);
 }
 
 @include mat.color-variants-backwards-compatibility($darkTheme);
@@ -62,9 +42,8 @@ body {
 
 body {
     margin: 0;
-    font-family: 'Noto Sans', "Helvetica Neue", sans-serif;
+    font-family: $devsite-primary-font-family;
 }
-
 
 .fw-500 {
     font-weight: 500;
@@ -82,25 +61,12 @@ body {
     padding-left: 40px;
 }
 
-.ptop {
-    padding-top: 1rem;
-}
-
-#projects,
-#experiences {
-    scroll-margin-top: 60px;
-}
-
 .contact-list {
     padding-bottom: 20px;
 }
 
 .experience-list {
     margin: 1rem 0;
-}
-
-.inner-container {
-    padding: 2% 10%;
 }
 
 p {
@@ -130,49 +96,9 @@ p {
     margin-bottom: 5px;
 }
 
-.header-list ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-}
-
-.header-list ul li {
-    margin: 0 1rem;
-}
-
-.header-list ul li a {
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s;
-}
-
-.header-list ul li a:hover {
-    border-radius: 4px;
-}
-
 .container {
     margin: 2rem auto;
     max-width: 1200px;
-}
-
-.my-card {
-    padding: 2rem;
-    border-radius: $main-border-radius;
-    border: $my-border;
-}
-
-.my-card-no-shadow {
-    padding: 2rem;
-    border: 1px solid #cfcfcf;
-    border-radius: $main-border-radius;
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.my-card-no-shadow:hover {
-    box-shadow:
-        0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .profile-photo {
@@ -182,11 +108,6 @@ p {
     display: block;
     margin: 0 auto 1rem;
 }
-
-.project {
-    margin-bottom: 1.5rem;
-}
-
 
 .aboutme {
     display: flex;
@@ -228,7 +149,6 @@ p {
 
 /* Grid item styling */
 .grid-item {
-    background: white;
     border-radius: $main-border-radius;
     padding: 15px;
     text-align: center;
@@ -243,20 +163,6 @@ p {
 /* Title inside the grid item */
 .grid-item h2 {
     margin: 10px 0;
-}
-
-
-.language-list {
-    list-style-type: none;
-    /* Remove bullets */
-    padding: 0;
-    /* Remove default padding */
-    margin: 10px 0;
-    /* Space above and below */
-}
-
-.language-list li {
-    padding: 3px 0;
 }
 
 .language-badges {
@@ -287,14 +193,14 @@ p {
     margin-bottom: 8px;
 }
 
-.df-jc-ac{
+.df-jc-ac {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.theme-icon{
-    margin: 0; 
+.theme-icon {
+    margin: 0;
     padding: 0;
     width: 24px;
     height: 24px;
@@ -307,133 +213,9 @@ p {
     align-items: center;
 }
 
-//============== nav ================================
-
-header {
-    padding: 0px 20px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-}
-
-.my-navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    flex-wrap: nowrap;
-}
-
-.navbar-header {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.my-navbar-brand {
-    text-decoration: none;
-    font-weight: 600 !important;
-    margin-right: 20px;
-    white-space: nowrap;
-}
-
-.navbar-menu {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0;
-    flex-grow: 1;
-    justify-content: flex-end;
-}
-
-.navbar-menu li {
-    margin: 0 15px;
-}
-
-.navbar-menu li a {
-    text-decoration: none;
-    padding: 10px 15px;
-    font-weight: 500;
-    font-size: 14px;
-    font-family: $devsite-primary-font-family;
-    transition: color 0.3s, background-color 0.3s;
-    border-radius: 5px;
-}
-
-.navbar-menu li a:hover {
-    color: black;
-}
-
-/* Mobile responsiveness */
-.navbar-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: color 0.3s;
-    margin-left: auto;
-}
-
-.menu-icon {
-    display: flex;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s, color 0.3s, box-shadow 0.3s;
-}
-
-.menu-icon:hover {
-    background-color: #d8dde2;
-    border-radius: 50%;
-}
-
-
 ///========================================media======================
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
-    .inner-container {
-        padding: 1rem;
-    }
-
-    //------------------nav-----------
-    .my-navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar-header {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 0;
-    }
-
-    .navbar-menu {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .navbar-menu.active {
-        display: flex;
-    }
-
-    .navbar-menu li {
-        text-align: center;
-        margin: 10px 0;
-    }
-
-    .navbar-toggle {
-        display: block;
-    }
-
-    //------------------nav- end----------
-
     .aboutme {
         flex-direction: column;
         align-items: center;
@@ -468,10 +250,6 @@ header {
 
     .grid-container {
         grid-template-columns: 1fr;
-    }
-
-    .inner-container {
-        padding: 1rem;
     }
 }
 

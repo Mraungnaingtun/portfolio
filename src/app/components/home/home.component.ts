@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ExperiencesListComponent } from '../experiences-list/experiences-list.component';
-import { NavbarComponent } from '../navbar/navbar.component';
 import { ContactsComponent } from '../contacts/contacts.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -17,7 +16,6 @@ import { MatToolbarComponent } from '../mat-toolbar/mat-toolbar.component';
   imports: [
     CommonModule,
     ExperiencesListComponent,
-    NavbarComponent,
     ContactsComponent,
     MatButtonModule,
     MatIconModule,
