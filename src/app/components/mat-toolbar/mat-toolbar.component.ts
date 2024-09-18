@@ -23,6 +23,7 @@ import { RouterLink } from '@angular/router';
 export class MatToolbarComponent {
   menuItems = [
     { label: 'About', link: '#about' },
+    { label: 'Education & Skill', link: '#education-skill' },
     { label: 'Experiences', link: '#experiences' },
     { label: 'Projects', link: '#projects' },
     { label: 'Contact', link: '#contact' },

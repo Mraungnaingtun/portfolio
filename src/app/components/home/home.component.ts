@@ -35,9 +35,10 @@ export class HomeComponent {
 
   iam = "Aung Naing Tun";
 
-  aboutme = `I'm a Full Stack Web Developer 😎 and proficient in building scalable and efficient web solutions.
-   I enjoy collaborating with cross-functional teams to create innovative software solutions that meet user needs.
-   I have accumulated ${this.calculateYearMonth()} of professional experience.I love latest technologies.`;
+  aboutme = `I’m a Full Stack Web Developer 😎, proficient in building scalable and efficient
+            web solutions. I enjoy collaborating with cross-functional teams to create innovative 
+            software that meets user needs. With 1 year and 11 months of professional experience,
+            I have a passion for exploring the latest technologies.`;
 
   github_link = 'https://github.com/Mraungnaingtun';
 

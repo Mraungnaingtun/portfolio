@@ -12,12 +12,12 @@
                         <div><img src="assets/me.jpg" alt="Me" class="profile-photo" style="object-fit: cover;"></div>
                         <div class="aboutme-text">
                             <div class="logan-text mat-display-small">{{iam}}</div>
-                            <p class="mat-body-large">{{aboutme}}</p>
-                            <div class="d-flex gap-2 pt-2">
+                            <div class="mat-body-large intro-text">{{aboutme}}</div>
+                            <div class="d-flex gap-2 pt-3">
                                 <button (click)="downloadCV()" matTooltip="Click to download my CV"
-                                    mat-raised-button><span class="fw-semibold">CV</span></button>
+                                    mat-flat-button><span class="fw-semibold">CV</span></button>
                                 <button class="ml-2" (click)="goToGitHub(github_link)" matTooltip="Go to my GitHub"
-                                    mat-raised-button color="primary">
+                                    mat-flat-button color="primary">
                                     <span class="fw-semibold">
                                         GitHub
                                     </span>
@@ -28,25 +28,25 @@
                 </mat-card-content>
             </mat-card>
         </div>
-        <div class="container my-padding-top education-skill" id="education-skill">
+        <div class="container my-padding-top education-skill scroll-top" id="education-skill">
             <app-edu-skill></app-edu-skill>
         </div>
         <!-- ----------😎 experience list 😎----------  -->
-        <div class="experience-list my-padding-top container" id="experiences">
+        <div class="experience-list my-padding-top container scroll-top" id="experiences">
             <h3 class="text-center mat-headline-large fw-500">Work Experiences</h3>
             <app-experiences-list></app-experiences-list>
         </div>
     </div>
 
     <!-- ---------- project list ----------  -->
-    <div class="project-list my-padding-top container" id="projects">
+    <div class="project-list my-padding-top container scroll-top" id="projects">
         <div class="text-center mat-headline-large">My Projects</div>
         <app-project></app-project>
     </div>
 
     <!-- ---------- contact ----------  -->
-    <div class="contact-list my-padding-top">
-        <div class="text-center mat-headline-large pt-4">Contact</div>
+    <div class="contact-list my-padding-top scroll-top">
+        <div class="text-center mat-headline-large pt-4 ">Contact</div>
         <div id="contact">
             <app-contacts></app-contacts>
         </div>
