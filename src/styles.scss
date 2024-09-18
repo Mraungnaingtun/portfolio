@@ -1,11 +1,11 @@
 @use '@angular/material' as mat;
-@use './app/lighttheme.scss';
-@use './app/darktheme.scss';
-@include mat.core();
-@import "_variable";
 
-$lightTheme: lighttheme.$light-theme;
-$darkTheme: darktheme.$dark-theme;
+@use './app/styles/themes/theme1.scss';
+@include mat.core();
+@import "./app/styles/variable";
+
+$lightTheme: theme1.$light-theme;
+$darkTheme: theme1.$dark-theme;
 
 $themedarkbgcolor : mat.get-theme-color($darkTheme, primary, 10);
 $themelightbgcolor : mat.get-theme-color($lightTheme, secondary, 99);
@@ -23,7 +23,7 @@ $themelightbgcolor : mat.get-theme-color($lightTheme, secondary, 99);
 //===================default dark theme================
 :root {
     @include mat.all-component-themes($darkTheme);
-    @include theme-common($themedarkbgcolor, $main-dark-color);
+    @include theme-common($main-dark-bg-color, $main-dark-color);
 
     .github-link {
         color: $github-link;
@@ -34,7 +34,7 @@ $themelightbgcolor : mat.get-theme-color($lightTheme, secondary, 99);
 // ============ light theme =====================
 .light-theme {
     @include mat.all-component-colors($lightTheme);
-    @include theme-common($themelightbgcolor, $main-light-color);
+    @include theme-common($main-light-bg-color, $main-light-color);
 
     .github-link {
         color: $primary-color;
