@@ -49,7 +49,7 @@ export class HomeComponent {
 
 
   downloadCV() {
-    const cvUrl = 'assets/cv.pdf';
+    const cvUrl = 'assets/aungnaingtun.pdf';
     const a = document.createElement('a');
     a.href = cvUrl;
     a.download = 'aungnaingtun.pdf';

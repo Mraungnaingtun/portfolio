@@ -20,19 +20,24 @@ export class ExperiencesListComponent {
         backend: {
           technologies: ['Java', 'Spring Boot', 'Azure Function', 'Docker'],
           responsibilities: [
-            "Built and maintained secure, high-performance banking and other systems",
-            "Developed microservices for high-volume transactions",
-            "Implemented data encryption and secure authentication",
-            "Performance Testing(Load Testing, Stress Testing,...)",
-            "CI/CD on cloud platforms with Docker" 
+            "Maintain and develop core banking services (Java, Spring Boot).",
+            "Mobile banking API service that integrates with multiple banks(Java).",
+            "Mobile Admin Console backend services(Java Azure Functions,Node.js)",
+            "Maintain BFF Services (Spring Boot)",
+            "Report Services (JSP,Jasper Report Server)",
+            "Setup  and Deploy Services to Azure Cloud using Docker.",
+            "Implement authentication, authorization, and data protection.",
+            "Optimize server performance (Load testing , Concurrent Testing)"
           ]
         },
         frontend: {
           technologies: ['Angular','Html','Css','JavaScript'],
           responsibilities: [
-            "Developed web applications for international clients",
-            "Created responsive and user-friendly interfaces",
+            "Core Banking System .",
+            "Mobile Banking Admin Console .",
             "Collaborated with designers to implement designs",
+            "Matain and Develop mobile banking App (Flutter).",
+            "Develop Activity Management System Dashboard (Angular).",
             "Integrated RESTful APIs to fetch and display data",
             "Implemented responsive design principles for various screen sizes",
             "Improved application performance"
@@ -45,6 +50,7 @@ export class ExperiencesListComponent {
             "Designed relational databases for banking systems",
             "Improved SQL query performance for high-volume data",
             "Worked with NoSQL databases",
+            "Optimize queries and indexes for better performance.",
             "Migrated data between different database systems",
             "Documented database schemas",
           ]

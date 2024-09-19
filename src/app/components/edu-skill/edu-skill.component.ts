@@ -15,11 +15,12 @@ export class EduSkillComponent {
   skills: string[] = [
     "Spring Boot , Spring MVC",
     "Azure Functions with Java",
+    "Flutter","Dart",
     "Node.js, Express.js, MongoDB",
     "Angular.js, React.js",
     "MySQL, MS SQL, PostgreSQL",
     "Docker",
-    "HTML, CSS, JavaScript"
+    "HTML, CSS, SCSS, JavaScript",
   ];
 
 }

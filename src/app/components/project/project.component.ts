@@ -65,7 +65,7 @@ export class ProjectComponent {
       languages: ['Angular','Firebase']
     },
     {
-      title: 'Docker @ Backend',
+      title: 'Docker & Backend',
       development: 'Backend',
       description: 'Basic Setup Docker to host in Render Website.',
       link: 'https://github.com/Mraungnaingtun/docker-testing.git',
