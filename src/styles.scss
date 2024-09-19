@@ -7,8 +7,24 @@
 $lightTheme: theme1.$light-theme;
 $darkTheme: theme1.$dark-theme;
 
-$themedarkbgcolor : mat.get-theme-color($darkTheme, primary, 10);
-$themelightbgcolor : mat.get-theme-color($lightTheme, secondary, 99);
+
+// ------------- get theme color example-------------
+ $eg-theme-color : mat.get-theme-color($lightTheme, primary, 35);
+
+// -------------default theme creating example -------------
+// $default-theme: mat.define-theme((
+//   color: (
+//     theme-type: light,
+//     primary: mat.$azure-palette,
+//     tertiary: mat.$blue-palette,
+//   ),
+//   density: (
+//     scale: 0,
+//   )
+// ));
+// -------------default theme creating example -------------
+
+
 
 @mixin theme-common($bg-color, $text-color) {
 
@@ -28,6 +44,7 @@ $themelightbgcolor : mat.get-theme-color($lightTheme, secondary, 99);
     .github-link {
         color: $github-link;
     }
+
 }
 
 
@@ -44,6 +61,11 @@ $themelightbgcolor : mat.get-theme-color($lightTheme, secondary, 99);
 
 @include mat.color-variants-backwards-compatibility($darkTheme);
 @include mat.typography-hierarchy($darkTheme);
+
+
+// .custom-toolbar {
+//     background-color: $eg-theme-color;
+// }
 
 
 html,
