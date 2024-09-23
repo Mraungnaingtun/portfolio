@@ -23,9 +23,9 @@ export class ProjectComponent {
 
   projects: Project[] = [
     {
-      title: 'Banking & unit test',
+      title: 'Banking & Security & JUnit',
       development: 'Backend',
-      description: 'Banking Management System with unit test and integration test.',
+      description: 'Banking Management System with latest spring version and spring security role base (access and refresh tokens logic) unit test and integration test.',
       link: 'https://github.com/Mraungnaingtun/banking-unit-test',
       languages: ['Spring Boot', 'JUnit5', 'Postgres']
     },
