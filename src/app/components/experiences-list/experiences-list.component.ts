@@ -14,7 +14,7 @@ export class ExperiencesListComponent {
   experiences =
     {
       jobTitle: "Full Stack Web Developer - MIT",
-      fromDate: "October 2022",
+      fromDate: "September 2023",
       toDate: "Present",
       responsibilities: {
         backend: {
