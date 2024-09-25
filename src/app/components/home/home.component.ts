@@ -71,7 +71,7 @@ export class HomeComponent {
 
 
   calculateYearMonth(): string {
-    const start = new Date('2022-10-00');
+    const start = new Date('2022-10-01');
     const today = new Date();
 
     let years = today.getFullYear() - start.getFullYear();
