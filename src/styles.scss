@@ -149,11 +149,11 @@ body {
 }
 
 .logan-text {
-    // font-size: 2.1rem;
     font-weight: 900;
     background: linear-gradient(45deg, #11cde6, #e70892, #220ce0);
     color: transparent;
-    -webkit-background-clip: text;
+    -webkit-background-clip: text; // For older versions of Chrome and Safari
+    background-clip: text; // Standard property for other browsers
     background-size: 200% 200%;
     animation: gradient-animation 6s ease infinite;
 }
