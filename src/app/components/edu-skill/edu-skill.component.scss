@@ -1,0 +1,51 @@
+.edu-skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.edu-and-skill {
+    padding: 20px;
+    max-width: 600px;
+    margin-right: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.degree,
+.completed-year {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.skills-list li {
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.uni-photo img {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+
+@media (max-width: 768px) {
+    .edu-skill {
+        flex-direction: column;
+    }
+}

@@ -1,25 +1,32 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ExperiencesListComponent } from '../experiences-list/experiences-list.component';
-import { NavbarComponent } from '../navbar/navbar.component';
 import { ContactsComponent } from '../contacts/contacts.component';
 import { MatButtonModule } from '@angular/material/button';
-interface Project {
-  title: string;
-  development: string;
-  description: string;
-  link: string;
-  languages: string[];
-}
+import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ProjectComponent } from '../project/project.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarComponent } from '../mat-toolbar/mat-toolbar.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { EduSkillComponent } from '../edu-skill/edu-skill.component';
+
+
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     CommonModule,
     ExperiencesListComponent,
-    NavbarComponent,
     ContactsComponent,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatSlideToggleModule,
+    ProjectComponent,
+    MatCardModule,
+    MatToolbarComponent,
+    MatTooltipModule,
+    EduSkillComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -28,59 +35,15 @@ export class HomeComponent {
 
   iam = "Aung Naing Tun";
 
-  aboutme = `I'm a Full Stack Web Developer 😎 and proficient in building scalable and efficient web solutions.
-   I enjoy collaborating with cross-functional teams to create innovative software solutions that meet user needs.
-   I have accumulated ${this.calculateYearMonth()} of professional experience.`;
+  aboutme = `I’m a Full Stack Web Developer 😎, proficient in building scalable and efficient
+            web solutions. I enjoy collaborating with cross-functional teams to create innovative 
+            software that meets user needs. With ${this.calculateYearMonth()} of professional experience,
+            I have a passion for exploring the latest technologies.`;
 
   github_link = 'https://github.com/Mraungnaingtun';
 
-  projects: Project[] = [
-    {
-      title: 'E-commerce Platform',
-      development: 'Frontend',
-      description: 'A brief overview of an online store platform, including its purpose and key features.',
-      link: 'https://github.com/Mraungnaingtun/portfolio',
-      languages: ['Java', 'Angular']
-    },
-    {
-      title: 'Project Management Tool',
-      development: 'Backend',
-      description: 'A short summary of a tool designed for managing team projects and tasks efficiently.',
-      link: 'https://github.com/Mraungnaingtun/portfolio',
-      languages: ['Java', 'Angular']
-    },
-    {
-      title: 'Social Media Dashboard',
-      development: 'Full Stack',
-      description: 'A concise description of a dashboard for monitoring social media metrics and activity.',
-      link: 'https://github.com/Mraungnaingtun/portfolio',
-      languages: ['JavaScript', 'React']
-    },
-    {
-      title: 'Portfolio Website',
-      development: 'Frontend',
-      description: 'A quick introduction to a personal portfolio website showcasing projects and skills.',
-      link: 'https://github.com/Mraungnaingtun/portfolio',
-      languages: ['HTML', 'Angular']
-    },
-    {
-      title: 'Real-Time Chat App',
-      development: 'Frontend',
-      description: 'An overview of a real-time chat application with features like messaging and notifications.',
-      link: 'https://github.com/Mraungnaingtun/portfolio',
-      languages: ['JavaScript', 'React']
-    },
-    {
-      title: 'Employee Management System',
-      development: 'Frontend',
-      description: 'A brief outline of a system for managing employee data, performance, and payroll.',
-      link: 'https://github.com/Mraungnaingtun/portfolio',
-      languages: ['Spring Boot', 'React']
-    },
-  ];
-
-  goToGitHub() {
-    window.open(this.github_link, '_blank');
+  goToGitHub(link: string) {
+    window.open(link, '_blank');
   }
 
 
@@ -106,9 +69,6 @@ export class HomeComponent {
     }
   }
 
-  getCapital(title: string) {
-    return title.toUpperCase();
-  }
 
   calculateYearMonth(): string {
     const start = new Date('2022-10-01');
@@ -122,7 +82,11 @@ export class HomeComponent {
       months += 12;
     }
 
-    return `${years} year${years !== 1 ? 's' : ''} ${months} month${months !== 1 ? 's' : ''}`;
+    // Check if months is 0, return just the year if true
+    if (months === 0) {
+      return `${years} year${years !== 1 ? 's' : ''}`;
+    }
 
+    return `${years} year${years !== 1 ? 's' : ''} ${months} month${months !== 1 ? 's' : ''}`;
   }
 }

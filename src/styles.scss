@@ -1,14 +1,85 @@
-@import "_variable";
+@use '@angular/material' as mat;
+
+@use './app/styles/themes/theme1.scss';
+@include mat.core();
+@import "./app/styles/variable";
+
+$lightTheme: theme1.$light-theme;
+$darkTheme: theme1.$dark-theme;
+
+
+// ------------- get theme color example-------------
+ $eg-theme-color : mat.get-theme-color($lightTheme, primary, 35);
+
+// -------------default theme creating example -------------
+// $default-theme: mat.define-theme((
+//   color: (
+//     theme-type: light,
+//     primary: mat.$azure-palette,
+//     tertiary: mat.$blue-palette,
+//   ),
+//   density: (
+//     scale: 0,
+//   )
+// ));
+// -------------default theme creating example -------------
+
+
+
+@mixin theme-common($bg-color, $text-color) {
+
+    body {
+        background-color: $bg-color;
+        color: $text-color;
+    }
+
+}
+
+
+//===================default dark theme================
+:root {
+    @include mat.all-component-themes($darkTheme);
+    @include theme-common($main-dark-bg-color, $main-dark-color);
+
+    .github-link {
+        color: $github-link;
+    }
+
+}
+
+
+// ============ light theme =====================
+.light-theme {
+    @include mat.all-component-colors($lightTheme);
+    @include theme-common($main-light-bg-color, $main-light-color);
+
+    .github-link {
+        color: $primary-color;
+    }
+
+}
+
+@include mat.color-variants-backwards-compatibility($darkTheme);
+@include mat.typography-hierarchy($darkTheme);
+
+
+// .custom-toolbar {
+//     background-color: $eg-theme-color;
+// }
+
 
 html,
 body {
     height: 100%;
 }
 
+* {
+    font-family: "Lato", sans-serif;
+}
+
 body {
     margin: 0;
-    font-family: 'Noto Sans', "Helvetica Neue", sans-serif;
-    background-color: #ffffff;
+    font-family: "Lato", sans-serif;
 }
 
 
@@ -20,21 +91,8 @@ body {
     font-weight: 900 !important;
 }
 
-.t-justfiy {
-    text-align: justify;
-}
-
 .aboutme-text {
     padding-left: 40px;
-}
-
-.ptop {
-    padding-top: 1rem;
-}
-
-#projects,
-#experiences {
-    scroll-margin-top: 60px;
 }
 
 .contact-list {
@@ -45,22 +103,7 @@ body {
     margin: 1rem 0;
 }
 
-.soft-background {
-    background-color: #f4f9f5;
-    padding-bottom: 1rem;
-}
-
-.inner-container {
-    padding: 2% 10%;
-}
-
-
-
-.inner-white-container {
-    background-color: #ffffff;
-}
-
-p {
+.intro-text {
     line-height: 1.6;
     text-align: justify;
     text-indent: $text-indent;
@@ -71,7 +114,7 @@ p {
     display: block;
     margin-top: 20px;
     text-decoration: none;
-    color: #007b8f;
+    color: $primary-color;
     font-weight: 600;
     font-size: 0.95em;
 }
@@ -87,61 +130,9 @@ p {
     margin-bottom: 5px;
 }
 
-.header-list ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    background-color: #333;
-}
-
-.header-list ul li {
-    margin: 0 1rem;
-}
-
-.header-list ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s;
-}
-
-.header-list ul li a:hover {
-    background-color: #555;
-    border-radius: 4px;
-}
-
 .container {
     margin: 2rem auto;
     max-width: 1200px;
-}
-
-.my-card {
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: $main-border-radius;
-    // box-shadow: $shadow;
-    border: $my-border;
-}
-
-.my-card-no-shadow {
-    padding: 2rem;
-    border: 1px solid #cfcfcf;
-    background-color: #fff;
-    border-radius: $main-border-radius;
-    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.my-card-no-shadow:hover {
-    box-shadow:
-        0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-h2 {
-    color: #333;
 }
 
 .profile-photo {
@@ -152,22 +143,17 @@ h2 {
     margin: 0 auto 1rem;
 }
 
-.project {
-    margin-bottom: 1.5rem;
-}
-
-
 .aboutme {
     display: flex;
     align-items: center;
 }
 
 .logan-text {
-    // font-size: 2.1rem;
     font-weight: 900;
     background: linear-gradient(45deg, #11cde6, #e70892, #220ce0);
     color: transparent;
-    -webkit-background-clip: text;
+    -webkit-background-clip: text; // For older versions of Chrome and Safari
+    background-clip: text; // Standard property for other browsers
     background-size: 200% 200%;
     animation: gradient-animation 6s ease infinite;
 }
@@ -197,7 +183,6 @@ h2 {
 
 /* Grid item styling */
 .grid-item {
-    background: white;
     border-radius: $main-border-radius;
     padding: 15px;
     text-align: center;
@@ -214,58 +199,12 @@ h2 {
     margin: 10px 0;
 }
 
-/* Description inside the grid item */
-.grid-item p {
-    // font-size: 0.9em;
-    color: #555;
-}
-
-/* Button to view the project */
-.view-project-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.view-project-button:hover {
-    background-color: #0056b3;
-}
-
-
-
-.language-list {
-    list-style-type: none;
-    /* Remove bullets */
-    padding: 0;
-    /* Remove default padding */
-    margin: 10px 0;
-    /* Space above and below */
-}
-
-.language-list li {
-    padding: 3px 0;
-}
-
 .language-badges {
     margin: 10px 0;
 }
 
-.badge {
-    display: inline-block;
-    background-color: #0f03b1;
-    color: #fff;
-    border-radius: 5px;
-    padding: 3px 6px;
+.chip-container {
     margin: 5px 3px;
-}
-
-.all-language {
-    background-color: #8ea0a5;
 }
 
 .experience-grid {
@@ -274,190 +213,48 @@ h2 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.experience-card {
-    background-color: #fff;
-    border-radius: $main-border-radius;
-    padding: 20px;
-    overflow: auto;
-}
 
 .job-title {
-    color: #333;
     margin-bottom: 15px;
-}
-
-.section {
-    margin-bottom: 15px;
-}
-
-.section h3 {
-    color: #555;
-    margin-bottom: 10px;
 }
 
 .responsibilities {
     list-style-type: disc;
     padding-left: 20px;
-    color: #666;
 }
 
 .responsibilities li {
     margin-bottom: 8px;
 }
 
-.card p {
-    color: #555;
-    margin: 0;
-    // font-size: 1rem;
-}
-
-
-//============== nav ================================
-
-header {
-    background-color: #ffffff;
-    padding: 0px 20px;
-    border-bottom: 1px solid #cadde0;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-
-.navbar-header {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    /* Prevent the brand from shrinking */
-}
-
-.navbar-brand {
-    // color: #ecf0f1;
-    text-decoration: none;
-    // font-size: 26px;
-    font-weight: 600 !important;
-    margin-right: 20px;
-    /* Space between brand and menu */
-    white-space: nowrap;
-    /* Prevents brand from wrapping */
-}
-
-.navbar-menu {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0;
-    flex-grow: 1;
-    justify-content: flex-end;
-}
-
-.navbar-menu li {
-    margin: 0 15px;
-}
-
-.navbar-menu li a {
-    // font-family: 'Lato';
-    color: rgb(82 87 90);
-    text-decoration: none;
-    padding: 10px 15px;
-    font-weight: 500;
-    font-size: 14px;
-    font-family: $devsite-primary-font-family;
-    transition: color 0.3s, background-color 0.3s;
-    border-radius: 5px;
-}
-
-.navbar-menu li a:hover {
-    color: black;
-}
-
-/* Mobile responsiveness */
-.navbar-toggle {
-    display: none;
-    /* Hidden by default */
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: color 0.3s;
-    margin-left: auto;
-}
-
-.menu-icon {
+.df-jc-ac {
     display: flex;
     justify-content: center;
-    width: 30px;
-    height: 30px;
     align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-.menu-icon mat-icon {
-    color: #333;
-    /* Default color */
+.theme-icon {
+    margin: 0;
+    padding: 0;
+    width: 24px;
+    height: 24px;
 }
 
-.menu-icon:hover {
-    background-color: #d8dde2;
-    border-radius: 50%;
+.my-menu {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+
+.my-padding-top {
+    padding-top: 4rem;
+}
 
 ///========================================media======================
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
-    .inner-container {
-        padding: 1rem;
-    }
-
-    //------------------nav-----------
-    .navbar {
-        flex-direction: column;
-        /* Stack items vertically */
-        align-items: flex-start;
-        /* Align items to the left */
-    }
-
-    .navbar-header {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 0;
-    }
-
-    .navbar-menu {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .navbar-menu.active {
-        display: flex;
-        /* Show menu when active */
-    }
-
-    .navbar-menu li {
-        text-align: center;
-        margin: 10px 0;
-    }
-
-    .navbar-toggle {
-        display: block;
-        /* Show the toggle button */
-    }
-
-
-    //------------------nav- end----------
-
     .aboutme {
         flex-direction: column;
         align-items: center;
@@ -465,6 +262,10 @@ header {
 
     .aboutme-text {
         padding-left: 0px;
+    }
+
+    .job {
+        text-align: center;
     }
 }
 
@@ -488,17 +289,11 @@ header {
 
     .grid-container {
         grid-template-columns: 1fr;
-        /* One column on small screens */
-    }
-
-    .inner-container {
-        padding: 1rem;
     }
 }
 
 /* Default for larger screens */
 .responsive-text {
-    color: #000;
     font-weight: 800;
     font-size: 3.5rem;
     line-height: 74px;

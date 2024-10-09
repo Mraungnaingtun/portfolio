@@ -1,0 +1,33 @@
+.sticky-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.menu-button {
+    display: none;
+}
+
+.menu-items {
+    display: flex;
+    margin-left: auto;
+}
+
+.theme-icon {
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .menu-items {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+}
