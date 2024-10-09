@@ -13,14 +13,20 @@ import {MatDividerModule} from '@angular/material/divider';
 export class EduSkillComponent {
 
   skills: string[] = [
-    "Spring Boot , Spring MVC",
-    "Azure Functions with Java",
-    "Flutter","Dart",
-    "Node.js, Express.js, MongoDB",
-    "Angular.js, React.js",
-    "MySQL, MS SQL, PostgreSQL",
+    "Java Spring Boot",
+    // "Azure Functions with Java",
+    "Angular.js",
+    "JavaScript",
+    "TypeScript",
+    "MySQL",
+    "PostgreSQL",
+    "MongoDB",
+    "MS SQL",
     "Docker",
-    "HTML, CSS, SCSS, JavaScript",
+    "HTML",
+    "CSS",
+    "SCSS",
+    "JavaScript"
   ];
 
 }
